@@ -1,5 +1,8 @@
 #include "ros/ros.h"
 #include "myworkcell_core/LocalizePart.h"
+#include "tf/tf.h"
+#include <moveit/move_group_interface/move_group_interface.h>
+
 
 class ScanNPlan
 {
@@ -23,6 +26,11 @@ public:
       return;
     }
     ROS_INFO_STREAM("part localized: " << srv.response);
+
+    moveit::planning_interface::MoveGroupInterface move_group("manipulator");
+    geometry_msgs::Pose move_target = srv.response.pose;
+    move_group.setPoseTarget(move_target);
+    move_group.move();
   }
 
 private:
@@ -34,16 +42,20 @@ int main(int argc, char **argv)
 {
   ros::init(argc, argv, "myworkcell_node");
   ros::NodeHandle nh;
-  ros::NodeHandle private_node_handle ("~");
-  std::string base_frame;
-
-  private_node_handle.param<std::string>("base_frame", base_frame, "world");
+  ros::NodeHandle private_node_handle("~");
 
   ROS_INFO("ScanNPlan node has been initialized");
 
+  std::string base_frame;
+  private_node_handle.param<std::string>("base_frame", base_frame, "world"); // parameter name, string object reference, default value
+
+  ros::AsyncSpinner async_spinner(1);
   ScanNPlan app(nh);
-  ros::Duration(.5).sleep();  // wait for the class to initialize
+//  sleep(3);
+  ros::Duration(6).sleep(); //wait for the class to initialize
+
+  async_spinner.start();
   app.start(base_frame);
 
-  ros::spin();
+  ros::waitForShutdown();  //Due to async spinner
 }
