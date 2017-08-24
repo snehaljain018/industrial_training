@@ -7,4 +7,4 @@ moveit_setup_assistant_config:
   CONFIG:
     author_name: ROS Industrial
     author_email: ros-i@rosindustrial.org
-    generated_timestamp: 1503385592
+    generated_timestamp: 1503551732

@@ -3,6 +3,9 @@
   <xacro:include filename="$(find ur_description)/urdf/ur5.urdf.xacro" />
   <xacro:ur5_robot prefix="" joint_limited="true"/>
 
+  <xacro:include filename="$(find myworkcell_support)/urdf/puzzle_mount.xacro" />
+  <xacro:include filename="$(find myworkcell_support)/urdf/grinder.xacro" />
+
   <link name="world"/>
 
   <link name="table">
@@ -36,6 +39,18 @@
     <parent link="table"/>
     <child link="base_link"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="world_to_grinder" type="fixed">
+    <parent link="world"/>
+    <child link="grinder_frame"/>
+    <origin xyz="0.0 -0.4 0.6" rpy="0 3.14159 0"/>
+  </joint>
+
+  <joint name="robot_tool" type="fixed">
+    <parent link="tool0"/>
+    <child link="ee_mount"/>
+    <origin xyz="0 0 0" rpy="1.5708 0 0"/>
   </joint>
 
 </robot>

@@ -19,6 +19,7 @@ find_package(catkin REQUIRED COMPONENTS
   descartes_trajectory
   descartes_planner
   descartes_utilities
+  tf_conversions
 )
 
 ## System dependencies are found with CMake's conventions
@@ -125,6 +126,7 @@ catkin_package(
      descartes_trajectory
      descartes_planner
      descartes_utilities
+     tf_conversions
 #  DEPENDS system_lib
 )
 
@@ -155,6 +157,8 @@ include_directories(
 add_executable(vision_node src/vision_node.cpp)
 add_executable(myworkcell_node src/myworkcell_node.cpp)
 add_executable(descartes_node src/descartes_node.cpp)
+add_executable(adv_descartes_node src/adv_descartes_node.cpp)
+add_executable(adv_myworkcell_node src/adv_myworkcell_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -167,12 +171,15 @@ add_executable(descartes_node src/descartes_node.cpp)
 add_dependencies(vision_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(myworkcell_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(descartes_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
+add_dependencies(adv_descartes_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(adv_myworkcell_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(vision_node ${catkin_LIBRARIES})
 target_link_libraries(myworkcell_node ${catkin_LIBRARIES})
 target_link_libraries(descartes_node ${catkin_LIBRARIES})
+target_link_libraries(adv_descartes_node ${catkin_LIBRARIES})
+target_link_libraries(adv_myworkcell_node ${catkin_LIBRARIES})
 
 #############
 ## Install ##

@@ -77,12 +77,31 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          ee_base:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           ee_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
+          ee_mount:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           forearm_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          grinder_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          part:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -98,6 +117,10 @@ Visualization Manager:
             Show Trail: false
             Value: true
           tool0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          tool1:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -183,12 +206,31 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
+          ee_base:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           ee_link:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
+          ee_mount:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           forearm_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          grinder_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          part:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -204,6 +246,10 @@ Visualization Manager:
             Show Trail: false
             Value: true
           tool0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+          tool1:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -250,7 +296,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 2.99650002
+      Distance: 3.44551802
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -265,10 +311,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.509796977
+      Pitch: 0.334796906
       Target Frame: world
       Value: XYOrbit (rviz)
-      Yaw: 5.65994978
+      Yaw: 4.99495077
     Saved: ~
 Window Geometry:
   Displays:
